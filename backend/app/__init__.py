@@ -8,8 +8,8 @@ def create_app():
     app.config.from_object(Config)
     
     db.init_app(app)
-    migrate.init_app(app, db)
     bcrypt.init_app(app)
     jwt.init_app(app)
+    migrate.init_app(app, db)
     
     return app
